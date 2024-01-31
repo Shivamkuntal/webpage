@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Movies, Games, and More - Zine Funware 🎬🎮</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 20px; /* Add padding here */
+      height: 2000px; /* Just for demonstration purpose, replace it with the actual height of your content */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 0.5s ease; /* Smooth transition effect */
+    }
+    h1 {
+      background-color: #f2f2f2; /* Background color for heading */
+      padding: 10px; /* Padding for heading */
+      text-align: center; /* Center align the heading */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #search-bar {
+      width: 300px;
+      padding: 8px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    #menu {
+      width: 150px;
+      padding: 8px;
+      margin-left: 10px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #trending-tabs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+
+    .tab {
+      cursor: pointer;
+      padding: 8px 12px;
+    }
+
+    .tab:hover {
+      background-color: #f2f2f2;
+    }
+
+    .movie {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+  transition: box-shadow 0.3s ease;
+}
+
+
+    * Styles for movie description */
+.movie-description {
+    flex: 1; /* Take remaining space */
+}
+
+/* Styles for movie title */
+.movie-description h3 a {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 20px;
+}
+
+.movie-description h3 a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Styles for movie description text */
+.movie-description p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Styles for movie links */
+.movie-description a {
+    display: block;
+    margin-bottom: 5px;
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.movie-description a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+    .rating-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.stars {
+    font-size: 36px;
+}
+
+.star {
+    cursor: pointer;
+    color: gray;
+}
+
+.star:hover,
+.star.active {
+    color: gold;
+}
+h3 a {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+h3 a:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color: #0056b3; /* Change color on hover */
+}
+a{
+  color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline */
+    margin-right: 20px; /* Adjust the value as needed */
+}
+a:hover{
+  text-decoration: underline; /* Add underline on hover */
+    color: #0056b3; /* Change color on hover */
+}
+.music-container {
+  display: flex;
+  justify-content: space-around; /* Adjust as needed */
+  align-items: center;
+}
+
+.music-item {
+  text-align: center;
+  margin-top: 20px;
+  flex: 0 0 auto; /* Allow items to grow and shrink as needed */
+}
+
+.music-item img {
+  width: 200px; /* Adjust the width as needed */
+  height: 200px; /* Adjust the height as needed */
+}
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+}
+.container {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .web-series {
+            display: inline-block;
+            width: 200px; /* Adjust according to your needs */
+            margin-right: 10px; /* Adjust spacing between series */
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+  </style>
+</head>
+
+<body onscroll="changeBackground()">
+  <h1>MOVIES AND GAMES - Zine Funware 🎬🎮</h1>
+  <input type="text" id="search-bar" placeholder="What's on your mind">
+  <button>Search</button>
+  <label for="category">Choose a category:</label>
+  <select id="category" onchange="goToPage(this)">
+    <option value="">Select a category</option>
+    <option value="movies.html">Movies</option>
+    <option value="games.html">Games</option>
+    <option value="webseries.html">Web Series</option>
+    <option value="music.html">Music</option>
+  </select>
+  <script>
+    function goToPage(select) {
+      var selectedValue = select.value;
+      if (selectedValue) {
+        window.location.href = selectedValue;
+      }
+    }
+  </script>
+  <a href="movies.html">Movies</a>
+  <a href="games.html">Games</a>
+  <a href="webseries.html">webseries</a>
+  <a href="music.html">Music</a>
+  
+  <div id="trending-tabs">
+    <div class="tab">Trending Movies & Games</div>
+    <div class="movie">
+      <img src="avengers endgame poster resized.webp" alt="poster">
+      <div class="movie-description">
+        <h3><a href ="https://www.hotstar.com/in/movies/avengers-endgame/1260013556">Avengers: Endgame</a></h3>
+        <p>A culmination of the Marvel Cinematic Universe, featuring an ensemble cast.</p>
+        <a href="https://en.wikipedia.org/wiki/Avengers:_Endgame">Learn more</a>
+        <a href="https://www.youtube.com/watch?v=TcMBFSGVi1c">Watch the trailer now!</a>
+        <div class="rating-container">
+          <h1>Rate this Movie</h1>
+          <div class="stars">
+              <span class="star" data-value="1">&#9733;</span>
+              <span class="star" data-value="2">&#9733;</span>
+              <span class="star" data-value="3">&#9733;</span>
+              <span class="star" data-value="4">&#9733;</span>
+              <span class="star" data-value="5">&#9733;</span>
+          </div>
+          <p class="selected-rating">0 Stars</p>
+      </div>
+      </div>
+    </div>
+    <div class="movie">
+      <img src="gta 5.jpg" alt="poster">
+      <div class="movie-description">
+        <h3><a href="https://www.rockstargames.com/gta-v">GTA 5</a></h3>
+        <p>Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games</p>
+        <a href="https://en.wikipedia.org/wiki/Grand_Theft_Auto_V">know more</a>
+        <a href="https://www.youtube.com/watch?v=hvoD7ehZPcM">Watch trailer</a>
+        <div class="rating-container">
+          <h1>Rate this game</h1>
+          <div class="stars">
+              <span class="star" data-value="1">&#9733;</span>
+              <span class="star" data-value="2">&#9733;</span>
+              <span class="star" data-value="3">&#9733;</span>
+              <span class="star" data-value="4">&#9733;</span>
+              <span class="star" data-value="5">&#9733;</span>
+          </div>
+          <p class="selected-rating">0 Stars</p>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div >
+    <p >swipe down for more options</p>
+</div>
+<div>
+  <p>MORE!!</p>
+</div>
+<div>
+  <div class="web-series-tab">
+    <div class="tab">Web Series</div>
+    <div class="container">
+      <div class="web-series">
+        <h3>Aspirants</h3>
+        <img src="aspirants (1).jpg" alt="aspirants">
+        <p>Description: TV series that follows<br> the journey of three friends<br> who are preparing for the UPSC</p>
+      </div>
+      <div class="web-series">
+        <h3>Half CA</h3>
+        <img src="half ca (2).jpg" alt="half ca">
+        <p>Description:A comedy series about<br> Archie and Niraj, two <br>friends who face challenges <br>and dilemmas in their CA journey. </p>
+      </div>
+      <div class="web-series">
+        <a href="webseries.html">For more Web series -></a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="music-container-tab">
+    <div class="tab">Music</div>
+    <div class="music-container">
+      <div class="music-item">
+        <img src="music 2.jpg" alt="music">
+        <h3><a href="https://www.youtube.com/watch?v=Op4EMZXWjyE">DILAWRA</a></h3>
+      </div>
+      <div class="music-item">
+        <img src="music 2.jpg" alt="music">
+        <h3><a href="https://www.youtube.com/watch?v=5oExKMYIE9U">KAALASTAR</a></h3>
+      </div>
+      <div class="music-item">
+        <a href="music.html">For more music -></a>
+      </div>
+    </div>
+  </div>
+  
+  
+  <script>
+    function changeBackground() {
+      var scrollPosition = window.scrollY;
+
+      if (scrollPosition > 1000) {
+        document.body.style.backgroundImage ='url("https://images.genius.com/1e9a6b7ea9de88bea41f8ed7c56ffdd2.1000x1000x1.jpg")';
+      } else if(scrollPosition >500) {
+        document.body.style.backgroundImage ='url("https://multianime.com.mx/wp-content/uploads/2021/11/la-casa-de-papel-volumen-5-parte-2-netflix.jpg")';
+      }
+      else{
+        document.body.style.backgroundImage='url("https://m.media-amazon.com/images/M/MV5BNGExNWViZGItNjg0OC00OTVjLWEyNjAtMWY2ZDRlODg5MjYyXkEyXkFqcGdeQXVyNDA4NjM1NTc@._V1_.jpg")';
+      }
+    }
+  </script>
+
+<script src="script.js"></script>
+<footer class="footer">
+  <div class="container">
+      <div class="footer-content">
+          <p>&copy; 2024 Zine Funware. All rights reserved.</p>
+          <ul class="footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contactus.html">Contact Us</a></li>
+          </ul>
+      </div>
+  </div>
+</footer>
+
+</body>
+
+</html>
