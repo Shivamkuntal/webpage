@@ -9,6 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-image:url("https://wallpaperaccess.com/full/1981481.jpg");
         }
         .tab {
             overflow: hidden;
@@ -42,7 +43,11 @@
         h1{
             text-align: center;
         }
-    </style>
+    .tabcontent p {
+        display: inline; /* Set display to inline */
+        margin-right: 10px; /* Add some spacing between links */
+    }
+</style>
 </head>
 <body>
 <h1>Webseries</h1>
@@ -51,19 +56,46 @@
     <button class="tablinks" onclick="openTab(event, 'other')">Other Languages Web Series</button>
 </div>
 
+<style>
+    .tabcontent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .web-series-info {
+        margin-top: 10px;
+    }
+</style>
+
 <div id="hindi" class="tabcontent">
     <h3>Hindi Web Series</h3>
-    <p><a href="#">Mirzapur</a></p>
-    <p><a href="#">Sacred Games</a></p>
-    <p><a href="#">Paatal Lok</a></p>
+    <div class="web-series-info">
+        <img src="mirzapur.jpg" alt="Mirzapur">
+        <p><a href="https://www.primevideo.com/detail/Mirzapur/0PDOKMV9CRLOMO5EUKNCUJLG4Q">Mirzapur</a></p>
+    </div>
+    <div class="web-series-info">
+        <img src="sacred games.jpg" alt="Sacred Games">
+        <p><a href="https://www.netflix.com/in/title/80115328">Sacred Games</a></p>
+    </div>
+    <div class="web-series-info">
+        <img src="paatal lok.jpg" alt="Paatal Lok">
+        <p><a href="https://www.primevideo.com/detail/Paatal-Lok/0G9IEOHCN8KMY6COD9ILGH7IY5">Paatal Lok</a></p>
+    </div>
+    <p><a href="https://www.amazon.in/minitv?mtv_pt=external&refMarker=avod_bing_mw_bing_BRND_EDU_GS_TXT_AD2&utm_source=bing&utm_medium=cpc&utm_campaign=Brand%20Campaign_Bing&utm_term=Amazon%20mini%20TV&utm_content=miniTV%20-%20Exact">want more-></a></p>
 </div>
 
 <div id="other" class="tabcontent">
     <h3>Other Languages Web Series</h3>
-    <p><a href="#">Money Heist (Spanish)</a></p>
-    <p><a href="#">Dark (German)</a></p>
-    <p><a href="#">Kingdom (Korean)</a></p>
+    <img src="money heist poster.jpg" alt="money heist">
+    <p><a href="https://www.netflix.com/in/title/80192098">Money Heist (Spanish)</a></p>
+    <img src="dark.jpeg" alt="Dark">
+    <p><a href="https://www.netflix.com/in/title/80100172">Dark (German)</a></p>
+    <img src="kingdom.jpg" alt="Kingdom">
+    <p><a href="https://www.netflix.com/in/title/80180171">Kingdom (Korean)</a></p>
 </div>
+<p><a href="https://www.amazon.com/Amazon-Video/b?node=2858778011">want more-></a></p>
 
 <script>
     function openTab(evt, tabName) {
